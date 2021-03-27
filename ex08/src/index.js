@@ -7,6 +7,8 @@ let intersectionSet = new Set([...one].filter(x => two.has(x)));
 
 let differenceSet = new Set([...one].filter(x => !two.has(x)));
 
-console.log(unionSet);
-console.log(intersectionSet);
-console.log(differenceSet);
+module.exports = {
+    unionSet,
+    intersectionSet,
+    differenceSet
+};

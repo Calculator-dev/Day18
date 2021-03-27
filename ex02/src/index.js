@@ -1,5 +1,3 @@
-let fifteenArray = [];
-
 function* myGenerator() {
     yield* insideGenerator1();
     yield* insideGenerator2();
@@ -34,17 +32,13 @@ function* insideGenerator3() {
 }
 var iterator = myGenerator();
 
-
-for (let i = 0; i <= 15; i++){
-    if (i === 15){
-        fifteenArray.push("undefined!");
-    }
-    else {
-        fifteenArray[i] = iterator.next().value;
-    }
+let fifteenArray = [];
+for (let i = 0; i < 16; i++){
+    let iter = iterator.next();
+    fifteenArray[i] = iter.value + (iter.done ? "!" : "#");
 }
 
-console.log(fifteenArray.join("#, "));
+console.log(fifteenArray.join(", "));
 
 module.exports = {
     fifteenArray,

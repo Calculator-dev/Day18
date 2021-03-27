@@ -11,6 +11,11 @@ let shopingList = new Map([
 let arrKey = [...shopingList.keys()];
 let arrValue = [...shopingList.values()];
 
+for (let col of shopingList.entries()) {
+    arrKey.push(col[0]);
+    arrValue.push(col[1]);
+}
+
 for (let arrKey of shopingList.keys()){
     console.log(`groceries: ${arrKey}`);
 }
